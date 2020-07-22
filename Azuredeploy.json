@@ -34,7 +34,7 @@
                 "[resourceId('Microsoft.Web/serverfarms','appServicePlan1')]"
             ],
             "properties": {
-                "name": "CICDTEST1",
+                "name": "CICDTEST2",
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
             }
         }
