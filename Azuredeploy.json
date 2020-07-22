@@ -22,19 +22,19 @@
             }
         },
         {
-            "name": "CICDTEST1",
+            "name": "ved567",
             "type": "Microsoft.Web/sites",
             "apiVersion": "2018-11-01",
             "location": "[resourceGroup().location]",
             "tags": {
                 "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/appServicePlan1')]": "Resource",
-                "displayName": "CICDDisplay"
+                "displayName": "ved567"
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Web/serverfarms','appServicePlan1')]"
             ],
             "properties": {
-                "name": "CICDTEST2",
+                "name": "ved567",
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
             }
         }
