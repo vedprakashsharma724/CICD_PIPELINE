@@ -22,19 +22,19 @@
             }
         },
         {
-            "name": "webApp1",
+            "name": "CICDTEST1",
             "type": "Microsoft.Web/sites",
             "apiVersion": "2018-11-01",
             "location": "[resourceGroup().location]",
             "tags": {
                 "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/appServicePlan1')]": "Resource",
-                "displayName": "webApp1"
+                "displayName": "CICD"
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
             ],
             "properties": {
-                "name": "webApp1",
+                "name": "CICDTEST2",
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
             }
         }
