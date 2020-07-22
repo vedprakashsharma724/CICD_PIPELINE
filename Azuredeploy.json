@@ -5,6 +5,101 @@
   "parameters": {  },
   "variables": {  },
   "functions": [  ],
-  "resources": [  ],
+  "resources": [
+  {
+      "type": "microsoft.web/serverfarms",
+      "apiVersion": "2016-09-01",
+      "name": "msteams-samples-hello-world-csharp-master",
+      "comments": "<your-reference-notes>",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [
+          "<array-of-related-resource-names>"
+      ],
+      "tags": {
+         "displayName": "msteams-samples-hello-world-csharp-master"
+      },
+      "sku": {
+          "name": "<sku-name>",
+          "tier": "<sku-tier>",
+          "size": "<sku-size>",
+          "family": "<sku-family>",
+          "capacity": <sku-capacity>
+      },
+      "kind": "<type-of-resource>",
+      "copy": {
+          "name": "<name-of-copy-loop>",
+          "count": <number-of-iterations>,
+          "mode": "<serial-or-parallel>",
+          "batchSize": <number-to-deploy-serially>
+      },
+      "plan": {
+          "name": "<plan-name>",
+          "promotionCode": "<plan-promotion-code>",
+          "publisher": "<plan-publisher>",
+          "product": "<plan-product>",
+          "version": "<plan-version>"
+      },
+      "properties": {
+          "<settings-for-the-resource>",
+          "copy": [
+              {
+                  "name": ,
+                  "count": ,
+                  "input": {}
+              }
+          ]
+      },
+      "resources": [
+          "<array-of-child-resources>"
+      ]
+  }
+{
+      "type": sites
+      "apiVersion": "2015-08-01",
+      "name": "msteams-samples-hello-world-csharp-master",
+      "comments": "<your-reference-notes>",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [
+          "<array-of-related-resource-names>"
+      ],
+      "tags": {
+         "displayName": "msteams-samples-hello-world-csharp-master"
+      },
+      "sku": {
+          "name": "<sku-name>",
+          "tier": "<sku-tier>",
+          "size": "<sku-size>",
+          "family": "<sku-family>",
+          "capacity": <sku-capacity>
+      },
+      "kind": "<type-of-resource>",
+      "copy": {
+          "name": "<name-of-copy-loop>",
+          "count": <number-of-iterations>,
+          "mode": "<serial-or-parallel>",
+          "batchSize": <number-to-deploy-serially>
+      },
+      "plan": {
+          "name": "<plan-name>",
+          "promotionCode": "<plan-promotion-code>",
+          "publisher": "<plan-publisher>",
+          "product": "<plan-product>",
+          "version": "<plan-version>"
+      },
+      "properties": {
+          "<settings-for-the-resource>",
+          "copy": [
+              {
+                  "name": ,
+                  "count": ,
+                  "input": {}
+              }
+          ]
+      },
+      "resources": [
+          "<array-of-child-resources>"
+      ]
+  }
+],
   "outputs": {  }
 }
