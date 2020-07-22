@@ -1,105 +1,43 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "apiProfile": "",
-  "parameters": {  },
-  "variables": {  },
-  "functions": [  ],
-  "resources": [
-  {
-      "type": "microsoft.web/serverfarms",
-      "apiVersion": "2016-09-01",
-      "name": "msteams-samples-hello-world-csharp-master",
-      "comments": "<your-reference-notes>",
-      "location": "[resourceGroup().location]",
-      "dependsOn": [
-          "<array-of-related-resource-names>"
-      ],
-      "tags": {
-         "displayName": "msteams-samples-hello-world-csharp-master"
-      },
-      "sku": {
-          "name": "<sku-name>",
-          "tier": "<sku-tier>",
-          "size": "<sku-size>",
-          "family": "<sku-family>",
-          "capacity": <sku-capacity>
-      },
-      "kind": "<type-of-resource>",
-      "copy": {
-          "name": "<name-of-copy-loop>",
-          "count": <number-of-iterations>,
-          "mode": "<serial-or-parallel>",
-          "batchSize": <number-to-deploy-serially>
-      },
-      "plan": {
-          "name": "<plan-name>",
-          "promotionCode": "<plan-promotion-code>",
-          "publisher": "<plan-publisher>",
-          "product": "<plan-product>",
-          "version": "<plan-version>"
-      },
-      "properties": {
-          "<settings-for-the-resource>",
-          "copy": [
-              {
-                  "name": ,
-                  "count": ,
-                  "input": {}
-              }
-          ]
-      },
-      "resources": [
-          "<array-of-child-resources>"
-      ]
-  }
-{
-      "type": sites
-      "apiVersion": "2015-08-01",
-      "name": "msteams-samples-hello-world-csharp-master",
-      "comments": "<your-reference-notes>",
-      "location": "[resourceGroup().location]",
-      "dependsOn": [
-          "<array-of-related-resource-names>"
-      ],
-      "tags": {
-         "displayName": "msteams-samples-hello-world-csharp-master"
-      },
-      "sku": {
-          "name": "<sku-name>",
-          "tier": "<sku-tier>",
-          "size": "<sku-size>",
-          "family": "<sku-family>",
-          "capacity": <sku-capacity>
-      },
-      "kind": "<type-of-resource>",
-      "copy": {
-          "name": "<name-of-copy-loop>",
-          "count": <number-of-iterations>,
-          "mode": "<serial-or-parallel>",
-          "batchSize": <number-to-deploy-serially>
-      },
-      "plan": {
-          "name": "<plan-name>",
-          "promotionCode": "<plan-promotion-code>",
-          "publisher": "<plan-publisher>",
-          "product": "<plan-product>",
-          "version": "<plan-version>"
-      },
-      "properties": {
-          "<settings-for-the-resource>",
-          "copy": [
-              {
-                  "name": ,
-                  "count": ,
-                  "input": {}
-              }
-          ]
-      },
-      "resources": [
-          "<array-of-child-resources>"
-      ]
-  }
-],
-  "outputs": {  }
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "name": "appServicePlan1",
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2018-02-01",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "F1",
+                "capacity": 1
+            },
+            "tags": {
+                "displayName": "appServicePlan1"
+            },
+            "properties": {
+                "name": "appServicePlan1"
+            }
+        },
+        {
+            "name": "webApp1",
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2018-11-01",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/appServicePlan1')]": "Resource",
+                "displayName": "webApp1"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
+            ],
+            "properties": {
+                "name": "webApp1",
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
+            }
+        }
+    ],
+    "outputs": {}
 }
