@@ -31,7 +31,7 @@
                 "displayName": "CICDDisplay"
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
+                "[resourceId('Microsoft.Web/serverfarms','appServicePlan1')]"
             ],
             "properties": {
                 "name": "CICDTEST1",
