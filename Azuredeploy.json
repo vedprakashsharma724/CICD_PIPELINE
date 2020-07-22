@@ -6,7 +6,7 @@
     "variables": {},
     "resources": [
         {
-            "name": "appServicePlan1",
+            "name": "CICD_PIPELINE",
             "type": "Microsoft.Web/serverfarms",
             "apiVersion": "2018-02-01",
             "location": "[resourceGroup().location]",
@@ -15,10 +15,10 @@
                 "capacity": 1
             },
             "tags": {
-                "displayName": "appServicePlan1"
+                "displayName": "CICD_PIPELINE"
             },
             "properties": {
-                "name": "appServicePlan1"
+                "name": "CICD_PIPELINE"
             }
         },
         {
@@ -27,15 +27,15 @@
             "apiVersion": "2018-11-01",
             "location": "[resourceGroup().location]",
             "tags": {
-                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/appServicePlan1')]": "Resource",
+                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/CICD_PIPELINE')]": "Resource",
                 "displayName": "ved567"
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms','appServicePlan1')]"
+                "[resourceId('Microsoft.Web/serverfarms','CICD_PIPELINE')]"
             ],
             "properties": {
                 "name": "ved567",
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'CICD_PIPELINE')]"
             }
         }
     ],
